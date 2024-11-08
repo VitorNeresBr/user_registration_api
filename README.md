@@ -19,7 +19,7 @@ main.py # Main API file
 database.py # Database configuration and user template
 auth.py # Authentication functions
 
-# Step 3: Setting up the Database with SQLAlchemy
+# Third step: Setting up the database with SQLAlchemy
  I used DATABASE_URL to define the location of the database which will be SQLite. Here, sqlite:///./users.db means that the database will be saved in a file called users.db in the current folder.
  
  I used connect_args={"check_same_thread": False} to disable SQLite's internal check that can cause errors if we try to access the database from different threads.

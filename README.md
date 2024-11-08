@@ -15,9 +15,9 @@ pip install fastapi uvicorn sqlalchemy passlib
 # Second step: Creating the project structure!
 
  I created the following files in the .py template:
-main.py # Main API file
-database.py # Database configuration and user template
-auth.py # Authentication functions
+ main.py # Main API file
+ database.py # Database configuration and user template
+ auth.py # Authentication functions
 
 # Third step: Setting up the database with SQLAlchemy
  I used DATABASE_URL to define the location of the database which will be SQLite. Here, sqlite:///./users.db means that the database will be saved in a file called users.db in the current folder.

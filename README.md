@@ -30,4 +30,17 @@ pip install fastapi uvicorn sqlalchemy passlib
 
  Base will be the base class used to create models. All models will inherit from it. 
 
+ This part of the code defines the User model, which will represent the users table in the database. Each instance of User will be a row in the users table.
+
+ __tablename__ = "users" will set the table name to users.
+
+ id = Column(Integer, primary_key=True, index=True): Sets the id column as the primary key, a unique identifier for each record.
+
+ name = Column(String, index=True): Sets the name column, which will be a string (text).
+
+ password = Column(String): Sets the password column, which will also be a string. This column will store the encrypted password of the users.
+
+ cpf = Column(String, unique=True, index=True): Sets the cpf column, which stores the user's CPF as a string. With unique=True, we are ensuring that each CPF will be unique in the table.
+
+ And for safety, we use Base.metadata.create_all(bind=engine): to physically create the database and the users table with the columns defined in the users.db file if it does not already exist.
  

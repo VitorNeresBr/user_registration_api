@@ -50,4 +50,10 @@ pip install fastapi uvicorn sqlalchemy passlib
 
  We start by importing CryptContext from the passlib library. This is the part that helps us handle password hashing in an easy and secure way.
 
- 
+ The pwd_context command line will be an object that we will use to hash (encrypt) passwords and verify passwords. The schemes=["bcrypt"] serves to specify that we want to use the bcrypt hashing algorithm, which is great for protecting passwords. Bcrypt is secure because it adds a "salt" (random values) to passwords before encrypting them, making it even more difficult for hackers to attack. Finally, deprecated="auto" ensures that if in the future bcrypt is found to be insecure, it will be marked as "deprecated" automatically, suggesting the use of a more secure algorithm.
+
+ The get_password_hash(password) will be the function that will receive a password in plain text (password) and return an encrypted version of it, and this encrypted password will be stored in the database.
+
+ The verify_password(plain_password, hashed_password) function will compare the plaintext passwords (plain_password) provided by the user during login with the hashed version (hashed_password) stored in the database. It will return True if the passwords match and False if they do not match.
+
+

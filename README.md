@@ -44,6 +44,10 @@ pip install fastapi uvicorn sqlalchemy passlib
 
  And for safety, we use Base.metadata.create_all(bind=engine): to physically create the database and the users table with the columns defined in the users.db file if it does not already exist.
  
- # Step Four: Setting Up Authentication
+ # Fourth step: Setting Up Authentication
  
+ In the fourth step, we will set up basic authentication for our API using FastAPI. This involves encrypting user passwords and validating passwords during login. For this, we will use the PassLib library, which is widely used for securely hashing passwords.
+
+ We start by importing CryptContext from the passlib library. This is the part that helps us handle password hashing in an easy and secure way.
+
  

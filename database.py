@@ -1,9 +1,6 @@
-from operator import index
 from sqlalchemy import Column, Integer, String, create_engine, false
 from sqlalchemy.exc.declarative import declaratie_base
-from sqlalchemy.orm import sessionmaker, Session
-from sqlalchemy.testing import fails
-from sqlalchemy.testing.plugin.plugin_base import engines
+from sqlalchemy.orm import sessionmaker
 
 DATABASE_URL = 'sqlite://./users.db'
 

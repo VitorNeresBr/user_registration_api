@@ -44,3 +44,6 @@ pip install fastapi uvicorn sqlalchemy passlib
 
  And for safety, we use Base.metadata.create_all(bind=engine): to physically create the database and the users table with the columns defined in the users.db file if it does not already exist.
  
+ # Step Four: Setting Up Authentication
+ 
+ 

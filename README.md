@@ -56,4 +56,12 @@ pip install fastapi uvicorn sqlalchemy passlib
 
  The verify_password(plain_password, hashed_password) function will compare the plaintext passwords (plain_password) provided by the user during login with the hashed version (hashed_password) stored in the database. It will return True if the passwords match and False if they do not match.
 
+ # Fifth step: a API com o FastAPI
 
+ Now we will create the heart of our application that will have all the necessary endpoints to register, read, update and delete users. We will also configure authentication using the concepts we established in the previous steps (such as password hashing).
+
+ First we import all the necessary libraries, such as FastAPI, SQLAlchemy, and our database and auth files that we made in the previous steps.
+
+ We will use the command line Base.metadata.create_all(bind=engine) to create the tables in the database and we will use app = FastAPI() to start our application in FastAPI.
+
+ 

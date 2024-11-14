@@ -15,3 +15,12 @@ class UserCreate(BaseModel):
     password: str
     cpf: str
 
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+@app.post('/users/', response_model=UserCreate)
+def create_user(user: UserCreate, db: Session = Depends(get_db)):
+    hashed_password = get_password_hash(user.password)

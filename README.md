@@ -64,4 +64,8 @@ pip install fastapi uvicorn sqlalchemy passlib
 
  We will use the command line Base.metadata.create_all(bind=engine) to create the tables in the database and we will use app = FastAPI() to start our application in FastAPI.
 
+ The UserCreate class defines the format of the data we expect when users are registered. The fields are name, password and cpf.
+
+ The def get_db() function will be a yield that will provide a database connection and will automatically close after the operation is complete to avoid problems such as memory leaks or too many open connections.
+
  
